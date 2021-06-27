@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Create&insert - Exhibition</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Exhibition</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Code <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../code/insert/" class="dropdown-item">Insert</a>
+</li>
+                                    
+<li>
+    <a href="../../code/%D1%81reate/" class="dropdown-item">Сreate</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mongo <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Create&insert</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tables/dog/" class="dropdown-item">Dog</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/exhibit/" class="dropdown-item">Exhibit</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/expert/" class="dropdown-item">Expert</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/judging/" class="dropdown-item">Judging</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/owner/" class="dropdown-item">Owner</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/perfom/" class="dropdown-item">Perfom</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/registration/" class="dropdown-item">Registration</a>
+</li>
+                                    
+<li>
+    <a href="../../tables/ring/" class="dropdown-item">Ring</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../code/%D1%81reate/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../tables/dog/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#create-insert" class="nav-link">Create &amp; Insert</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="create-insert">Create &amp; Insert</h2>
+<h4 id="owner">Создание и заполнение таблицы "Owner"</h4>
+<pre><code>db.Owner.insertMany([
+                        {Full_name:&quot;Sakura Haruno&quot;},
+                        {Full_name:&quot;Shikamaru Nara&quot;},                                           {Full_name:&quot;Uzumaki Naruto&quot;},
+                        {Full_name:&quot;Uchiha Sasuke&quot;},
+                        {Full_name:&quot;Kakashi Hatake&quot;}
+                    ])
+
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedIds&quot; : [
+                ObjectId(&quot;60c887f4bb5cf54303651ec2&quot;),
+                ObjectId(&quot;60c887f4bb5cf54303651ec3&quot;),
+                ObjectId(&quot;60c887f4bb5cf54303651ec4&quot;),
+                ObjectId(&quot;60c887f4bb5cf54303651ec5&quot;),
+                ObjectId(&quot;60c887f4bb5cf54303651ec6&quot;)
+        ]
+}
+</code></pre>
+<h4 id="ring">Создание и заполнение таблицы "Ring"</h4>
+<pre><code>db.Ring.insertMany([
+                        {ring_number:&quot;1&quot;},
+                        {ring_number:&quot;2&quot;}, 
+                        {ring_number:&quot;3&quot;}
+                    ])
+
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedIds&quot; : [
+                ObjectId(&quot;60c888c7bb5cf54303651ec7&quot;),
+                ObjectId(&quot;60c888c7bb5cf54303651ec8&quot;),
+                ObjectId(&quot;60c888c7bb5cf54303651ec9&quot;)
+        ]
+}
+</code></pre>
+<h4 id="exhibition">Создание и заполнение таблицы "Exhibition"</h4>
+<pre><code>db.Exhibition.insertMany([
+                            {type:&quot;monobreed&quot;},
+                            {type:&quot;monobreed&quot;}, 
+                            {type:&quot;polybreed&quot;}
+                         ])
+
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedIds&quot; : [
+                ObjectId(&quot;60c889a2bb5cf54303651eca&quot;),
+                ObjectId(&quot;60c889a2bb5cf54303651ecb&quot;),
+                ObjectId(&quot;60c889a2bb5cf54303651ecc&quot;)
+        ]
+}
+</code></pre>
+<h4 id="expert">Создание и заполнение таблицы "Expert"</h4>
+<pre><code> db.Expert.insertMany([
+                 {FN:&quot;Min Yoongi&quot;, contract:&quot;0&quot;, expert_club:&quot;Seirin&quot;},
+                 {FN:&quot;Jeon Jungkook&quot;, contract:&quot;1&quot;, expert_club:&quot;Teiko&quot;}, 
+                 {FN:&quot;Kim Namjoon&quot;, contract:&quot;0&quot;, expert_club:&quot;Rakuzan&quot;}, 
+                 {FN:&quot;Kim Taehyung&quot;, contract:&quot;1&quot;, expert_club:&quot;Teiko&quot;},
+                 {FN:&quot;Park Jimin&quot;, contract:&quot;1&quot;, expert_club:&quot;Rakuzan&quot;}
+                    ])
+
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedIds&quot; : [
+                ObjectId(&quot;60c88c46bb5cf54303651ecd&quot;),
+                ObjectId(&quot;60c88c46bb5cf54303651ece&quot;),
+                ObjectId(&quot;60c88c46bb5cf54303651ecf&quot;),
+                ObjectId(&quot;60c88c46bb5cf54303651ed0&quot;),
+                ObjectId(&quot;60c88c46bb5cf54303651ed1&quot;)
+        ]
+}
+
+</code></pre>
+<h4 id="_1">Создание переменных для внешних ключей</h4>
+<h5 id="owner_1">Из таблицы "Owner"</h5>
+<pre><code>owner1_id = ObjectId(&quot;60c887f4bb5cf54303651ec2&quot;)
+owner2_id = ObjectId(&quot;60c887f4bb5cf54303651ec3&quot;)
+owner3_id = ObjectId(&quot;60c887f4bb5cf54303651ec4&quot;)
+owner4_id = ObjectId(&quot;60c887f4bb5cf54303651ec5&quot;)
+owner5_id = ObjectId(&quot;60c887f4bb5cf54303651ec6&quot;)
+</code></pre>
+<h5 id="ring_1">Из таблицы "Ring"</h5>
+<pre><code>ring_id = ObjectId(&quot;60c888c7bb5cf54303651ec7&quot;)
+ring2_id = ObjectId(&quot;60c888c7bb5cf54303651ec8&quot;)
+ring3_id = ObjectId(&quot;60c888c7bb5cf54303651ec9&quot;)
+</code></pre>
+<h5 id="expert_1">Из таблицы "Expert"</h5>
+<pre><code>expert1_id = ObjectId(&quot;60c88c46bb5cf54303651ecd&quot;)
+expert2_id = ObjectId(&quot;60c88c46bb5cf54303651ece&quot;)
+expert3_id = ObjectId(&quot;60c88c46bb5cf54303651ecf&quot;)
+expert4_id = ObjectId(&quot;60c88c46bb5cf54303651ed0&quot;)
+expert5_id = ObjectId(&quot;60c88c46bb5cf54303651ed1&quot;)
+</code></pre>
+<h5 id="dog">Из таблицы "Dog"</h5>
+<pre><code>dog1_id = ObjectId(&quot;60c890e9bb5cf54303651ed2&quot;)
+dog2_id = ObjectId(&quot;60c890e9bb5cf54303651ed3&quot;)
+dog3_id = ObjectId(&quot;60c890e9bb5cf54303651ed4&quot;)
+dog4_id = ObjectId(&quot;60c890e9bb5cf54303651ed5&quot;)
+dog5_id = ObjectId(&quot;60c890e9bb5cf54303651ed6&quot;)
+</code></pre>
+<h5 id="exhibition_1">Из таблицы "Exhibition"</h5>
+<pre><code>exhibition1_id = ObjectId(&quot;60c889a2bb5cf54303651eca&quot;)
+exhibition2_id = ObjectId(&quot;60c889a2bb5cf54303651ecb&quot;)
+exhibition3_id = ObjectId(&quot;60c889a2bb5cf54303651ecc&quot;)
+</code></pre>
+<h4 id="dog_1">Создание и заполнение таблицы "Dog"</h4>
+<pre><code>db.Dog.insertMany([
+                    {name:&quot;Jean&quot;, passport:&quot;14567&quot;, date_vaccination:new Date(&quot;2021-12-20&quot;), members_club:&quot;Karasuno&quot;, id_owner:new DBRef(&quot;Owner&quot;, owner1_id)}, 
+                    {name:&quot;Levi&quot;, passport:&quot;38712&quot;, date_vaccination:new Date(&quot;2021-11-20&quot;), members_club:&quot;Sharitoridzava&quot;, id_owner:new DBRef(&quot;Owner&quot;, owner2_id)},
+                    {name:&quot;Mikasa&quot;, passport:&quot;98512&quot;, date_vaccination:new Date(&quot;2020-09-20&quot;), members_club:&quot;Karasuno&quot;, id_owner:new DBRef(&quot;Owner&quot;, owner3_id)}, 
+                    {name:&quot;Eren&quot;, passport:&quot;12334&quot;, date_vaccination:new Date(&quot;2021-07-20&quot;), members_club:&quot;Nekoma&quot;, id_owner:new DBRef(&quot;Owner&quot;, owner4_id)},
+                    {name:&quot;Armin&quot;, passport:&quot;80294&quot;, date_vaccination:new Date(&quot;2021-02-18&quot;), members_club:&quot;Sharitoridzava&quot;, id_owner:new DBRef(&quot;Owner&quot;, owner5_id)}
+                    ])
+
+{
+     &quot;acknowledged&quot; : true,
+     &quot;insertedIds&quot; : [
+             ObjectId(&quot;60c890e9bb5cf54303651ed2&quot;),
+             ObjectId(&quot;60c890e9bb5cf54303651ed3&quot;),
+             ObjectId(&quot;60c890e9bb5cf54303651ed4&quot;),
+             ObjectId(&quot;60c890e9bb5cf54303651ed5&quot;),
+             ObjectId(&quot;60c890e9bb5cf54303651ed6&quot;)
+     ]
+}
+</code></pre>
+<h4 id="judging">Создание и заполнение таблицы "Judging"</h4>
+<pre><code>db.Judging.insertMany([
+            {results:&quot;7&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring_id), id_expert:new DBRef(&quot;Expert&quot;, expert1_id)}, 
+            {results:&quot;10&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring2_id), id_expert:new DBRef(&quot;Expert&quot;, expert2_id)},
+            {results:&quot;8&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring3_id), id_expert:new DBRef(&quot;Expert&quot;, expert3_id)},  
+            {results:&quot;5&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring_id), id_expert:new DBRef(&quot;Expert&quot;, expert4_id)},  
+        {results:&quot;3&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring2_id), id_expert:new DBRef(&quot;Expert&quot;, expert5_id)}
+                    ])
+
+{
+&quot;acknowledged&quot; : true,
+&quot;insertedIds&quot; : [
+        ObjectId(&quot;60c8a45abb5cf54303651ed7&quot;),
+        ObjectId(&quot;60c8a45abb5cf54303651ed8&quot;),
+        ObjectId(&quot;60c8a45abb5cf54303651ed9&quot;),
+        ObjectId(&quot;60c8a45abb5cf54303651eda&quot;),
+        ObjectId(&quot;60c8a45abb5cf54303651edb&quot;)
+]
+}
+</code></pre>
+<h4 id="performance">Создание и заполнение таблицы "Performance"</h4>
+<pre><code>db.Perform.insertMany([
+                    {grade:&quot;6&quot;, interm_results:&quot;good&quot;, final_rating:&quot;prize-winner&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring_id), id_dog:new DBRef(&quot;Dog&quot;, dog1_id), id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition1_id)}, 
+                    {grade:&quot;10&quot;, interm_results:&quot;excellent&quot;, final_rating:&quot;winner&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring2_id), id_dog:new DBRef(&quot;Dog&quot;, dog2_id), id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition3_id)},
+                    {grade:&quot;8&quot;, interm_results:&quot;very good&quot;, final_rating:&quot;prize-winner&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring3_id), id_dog:new DBRef(&quot;Dog&quot;, dog3_id), id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition3_id)}, 
+                    {grade:&quot;5&quot;, interm_results:&quot;not bad&quot;, final_rating:&quot;certificate of participation&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring_id), id_dog:new DBRef(&quot;Dog&quot;, dog4_id), id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition1_id)}, 
+                    {grade:&quot;3&quot;, interm_results:&quot;bad&quot;, final_rating:&quot;certificate of participation&quot;, id_ring:new DBRef(&quot;Ring&quot;, ring2_id), id_dog:new DBRef(&quot;Dog&quot;, dog5_id), id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition2_id)}
+                     ])
+
+{
+     &quot;acknowledged&quot; : true,
+     &quot;insertedIds&quot; : [
+             ObjectId(&quot;60c8a811bb5cf54303651edc&quot;),
+             ObjectId(&quot;60c8a811bb5cf54303651edd&quot;),
+             ObjectId(&quot;60c8a811bb5cf54303651ede&quot;),
+             ObjectId(&quot;60c8a811bb5cf54303651edf&quot;),
+             ObjectId(&quot;60c8a811bb5cf54303651ee0&quot;)
+     ]
+}
+
+</code></pre>
+<h4 id="registration">Создание и заполнение таблицы "Registration"</h4>
+<pre><code>db.Registration.insertMany([
+                            {chequel:&quot;10.201 rub&quot;, status:&quot;1&quot;, id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition1_id), id_dog:new DBRef(&quot;Dog&quot;, dog1_id), id_owner:new DBRef(&quot;Owner&quot;, owner1_id)},
+                            {chequel:&quot;8.960 rub&quot;, status:&quot;0&quot;, id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition2_id), id_dog:new DBRef(&quot;Dog&quot;, dog2_id), id_owner:new DBRef(&quot;Owner&quot;, owner2_id)},
+                            {chequel:&quot;8.990 rub&quot;, status:&quot;1&quot;, id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition3_id), id_dog:new DBRef(&quot;Dog&quot;, dog3_id), id_owner:new DBRef(&quot;Owner&quot;, owner3_id)}, 
+                            {chequel:&quot;4.980 rub&quot;, status:&quot;0&quot;, id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition1_id), id_dog:new DBRef(&quot;Dog&quot;, dog4_id), id_owner:new DBRef(&quot;Owner&quot;, owner4_id)}, 
+                            {chequel:&quot;12.000 rub&quot;, status:&quot;1&quot;, id_exhibition:new DBRef(&quot;Exhibition&quot;, exhibition2_id), id_dog:new DBRef(&quot;Dog&quot;, dog5_id), id_owner:new DBRef(&quot;Owner&quot;, owner5_id)}
+                            ])
+{
+        &quot;acknowledged&quot; : true,
+        &quot;insertedIds&quot; : [
+                ObjectId(&quot;60c8aab9bb5cf54303651ee1&quot;),
+                ObjectId(&quot;60c8aab9bb5cf54303651ee2&quot;),
+                ObjectId(&quot;60c8aab9bb5cf54303651ee3&quot;),
+                ObjectId(&quot;60c8aab9bb5cf54303651ee4&quot;),
+                ObjectId(&quot;60c8aab9bb5cf54303651ee5&quot;)
+        ]
+}
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
