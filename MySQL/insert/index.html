@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Сreate - Exhibition</title>
+        <title>Insert - Exhibition</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,25 +36,55 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Code <b class="caret"></b></a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../insert/" class="dropdown-item">Insert</a>
+    <a href="../../MongoDB/create%26insert/" class="dropdown-item">Create&insert</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Сreate</a>
+    <a href="../../MongoDB/inquiries/" class="dropdown-item">Inquiries</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MySQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../inquiries/" class="dropdown-item">Inquiries</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Insert</a>
+</li>
+                                    
+<li>
+    <a href="../%D1%81reate/" class="dropdown-item">Сreate</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mongo <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../mongo/create%26insert/" class="dropdown-item">Create&insert</a>
+    <a href="../../PHP/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PostgreSQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../PostgreSQL/insert/" class="dropdown-item">Insert</a>
+</li>
+                                    
+<li>
+    <a href="../../PostgreSQL/%D1%81reate/" class="dropdown-item">Сreate</a>
 </li>
                                 </ul>
                             </li>
@@ -104,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../insert/" class="nav-link">
+                                <a rel="prev" href="../inquiries/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../mongo/create%26insert/" class="nav-link">
+                                <a rel="next" href="../%D1%81reate/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -131,7 +161,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#create" class="nav-link">Create</a>
+            <li class="nav-item" data-level="2"><a href="#insert" class="nav-link">Insert</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -140,76 +170,58 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="create">Create</h2>
-<h4 id="dog">Создание таблицы "Dog"</h4>
-<pre><code>CREATE TABLE dog (
-    id_dog integer PRIMARY KEY NOT NULL,
-    dog_name text NOT NULL,
-    passport integer NOT NULL,
-    contract boolean NOT NULL,
-    id_dog_club integer NOT NULL
-);
+<h2 id="insert">Insert</h2>
+<h4 id="dog">Заполнение таблицы "Dog"</h4>
+<pre><code class="language-sql">INSERT INTO 'dog' ('id_dog','name','passport','date_vaccination','members_club','id_owner') VALUES ('1','Jean','14567','2031-12-20 21:00:00','Karasuno','11');
+INSERT INTO 'dog' ('id_dog','name','passport','date_vaccination','members_club','id_owner') VALUES ('2','Levi','38712','2027-11-20 19:00:00','Sharitoridzava','12');
+INSERT INTO 'dog' ('id_dog','name','passport','date_vaccination','members_club','id_owner') VALUES ('3','Mikasa','98512','2018-06-20 19:00:00','Karasuno','13');
+INSERT INTO 'dog' ('id_dog','name','passport','date_vaccination','members_club','id_owner') VALUES ('4','Eren','12334','2003-09-20 21:00:00','Nekoma','14');
+INSERT INTO 'dog' ('id_dog','name','passport','date_vaccination','members_club','id_owner') VALUES ('5','Armin','80294','2012-03-20 20:00:00','Sharitoridzava','15');
 </code></pre>
-<h4 id="owner">Создание таблицы "Owner"</h4>
-<pre><code>CREATE TABLE owner (
-    id_owner integer PRIMARY KEY NOT NULL,
-    owner_name text NOT NULL
-);  
+<h4 id="owner">Заполнение таблицы "Owner"</h4>
+<pre><code class="language-sql">INSERT INTO 'owner' ('id_owner','FN') VALUES ('11','Sakura Haruno');
+INSERT INTO 'owner' ('id_owner','FN') VALUES ('12','Shikamaru Nara');
+INSERT INTO 'owner' ('id_owner','FN') VALUES ('13','Uzumaki Naruto');
+INSERT INTO 'owner' ('id_owner','FN') VALUES ('14','Uchiha Sasuke');
+INSERT INTO 'owner' ('id_owner','FN') VALUES ('15','Kakashi Hatake');
 </code></pre>
-<h4 id="registration">Создание таблицы "Registration"</h4>
-<pre><code>CREATE TABLE registration (
-    id_registration integer PRIMARY KEY NOT NULL,
-    receipt integer NOT NULL,
-    status boolean NOT NULL,
-    id_owner integer NOT NULL,
-    FOREIGN KEY (id_owner) REFERENCES owner (id_owner)
-);
+<h4 id="registration">Заполнение таблицы "Registration"</h4>
+<pre><code class="language-sql">INSERT INTO 'registration' ('id_registration','chequel','status','id_exhibition','id_dog','id_owner') VALUES ('301','10201','1','201','1','11');
+INSERT INTO 'registration' ('id_registration','chequel','status','id_exhibition','id_dog','id_owner') VALUES ('302','8960','0','202','2','12');
+INSERT INTO 'registration' ('id_registration','chequel','status','id_exhibition','id_dog','id_owner') VALUES ('303','2990','1','203','3','13');
+INSERT INTO 'registration' ('id_registration','chequel','status','id_exhibition','id_dog','id_owner') VALUES ('304','4500','0','201','4','14');
+INSERT INTO 'registration' ('id_registration','chequel','status','id_exhibition','id_dog','id_owner') VALUES ('305','12000','1','202','5','15');
 </code></pre>
-<h4 id="expert">Создание таблицы "Expert"</h4>
-<pre><code>CREATE TABLE expert (
-    id_expert integer PRIMARY KEY NOT NULL,
-    contract boolean NOT NULL,
-    full_name text NOT NULL,
-    expert_club text NOT NULL
-);
+<h4 id="expert">Заполнение таблицы "Expert"</h4>
+<pre><code class="language-sql">INSERT INTO 'expert' ('id_expert','contract','Fn','expert_club') VALUES ('111','0','Min Yoongi','Seirin');
+INSERT INTO 'expert' ('id_expert','contract','Fn','expert_club') VALUES ('112','1','Jeon Jungkook','Teiko');
+INSERT INTO 'expert' ('id_expert','contract','Fn','expert_club') VALUES ('113','0','Kim Namjoon','Rakuzan');
+INSERT INTO 'expert' ('id_expert','contract','Fn','expert_club') VALUES ('114','1','Kim Taehyung','Teiko');
+INSERT INTO 'expert' ('id_expert','contract','Fn','expert_club') VALUES ('115','1','Park Jimin','Rakuzan');
 </code></pre>
-<h4 id="ring">Создание таблицы "Ring"</h4>
-<pre><code>CREATE TABLE ring (
-    id_ring integer PRIMARY KEY NOT NULL,
-    ring_number integer NOT NULL
-);
+<h4 id="ring">Заполнение таблицы "Ring"</h4>
+<pre><code class="language-sql">INSERT INTO 'ring' ('id_Ring','ring_number') VALUES ('211','1');
+INSERT INTO 'ring' ('id_Ring','ring_number') VALUES ('212','2');
+INSERT INTO 'ring' ('id_Ring','ring_number') VALUES ('213','3');
 </code></pre>
-<h4 id="perform">Создание таблицы "Perform"</h4>
-<pre><code>CREATE TABLE perfom (
-    id_perfom integer PRIMARY KEY NOT NULL,
-    mark integer NOT NULL,
-    inermed_results text NOT NULL,
-    final_results text NOT NULL,
-    id_exhibit integer NOT NULL,
-    id_dog integer NOT NULL,
-    id_registration integer NOT NULL,
-    FOREIGN KEY (id_exhibit) REFERENCES exhibit (id_exhibit),
-    FOREIGN KEY (id_dog) REFERENCES dog (id_dog),
-    FOREIGN KEY (id_registration) REFERENCES registration (id_registration)
-);
+<h4 id="performance-in-the-ring">Заполнение таблицы "Performance in the ring"</h4>
+<pre><code class="language-sql">INSERT INTO 'perfomance_in_the_ring' ('id_perfomance','grade','interm_results','final_rating','id_ring','id_dog','id_exhibition') VALUES ('401','6','good','prize-winner','211','1','201');
+INSERT INTO 'perfomance_in_the_ring' ('id_perfomance','grade','interm_results','final_rating','id_ring','id_dog','id_exhibition') VALUES ('402','10','excellent','winner','212','2','203');
+INSERT INTO 'perfomance_in_the_ring' ('id_perfomance','grade','interm_results','final_rating','id_ring','id_dog','id_exhibition') VALUES ('403','8','very good','prize-winner','213','3','203');
+INSERT INTO 'perfomance_in_the_ring' ('id_perfomance','grade','interm_results','final_rating','id_ring','id_dog','id_exhibition') VALUES ('404','5','not bad','certificate of participation','211','4','201');
+INSERT INTO 'perfomance_in_the_ring' ('id_perfomance','grade','interm_results','final_rating','id_ring','id_dog','id_exhibition') VALUES ('405','2','bad','certificate of participation','212','5','202');
 </code></pre>
-<h4 id="exhibit">Создание таблицы "Exhibit"</h4>
-<pre><code> CREATE TABLE exhibit (
-    id_exhibit integer PRIMARY KEY NOT NULL,
-    type_exhibit text NOT NULL
-);
+<h4 id="exhibition">Заполнение таблицы "Exhibition"</h4>
+<pre><code class="language-sql">INSERT INTO 'exhibition' ('id_exhibition','type') VALUES ('201','monobreed');
+INSERT INTO 'exhibition' ('id_exhibition','type') VALUES ('202','monobreed');
+INSERT INTO 'exhibition' ('id_exhibition','type') VALUES ('203','polybreed');
 </code></pre>
-<h4 id="judging">Создание таблицы "Judging"</h4>
-<pre><code>CREATE TABLE judging (
-    id_judging  integer PRIMARY KEY NOT NULL,
-    results integer NOT NULL,
-    id_expert integer NOT NULL,
-    id_perfom integer NOT NULL,
-    id_ring integer NOT NULL,
-    FOREIGN KEY (id_expert) REFERENCES expert (id_expert),
-    FOREIGN KEY (id_perfom) REFERENCES perfom (id_perfom),
-    FOREIGN KEY (id_ring) REFERENCES ring (id_ring)
-);
+<h4 id="judging">Заполнение таблицы "Judging"</h4>
+<pre><code class="language-sql">INSERT INTO 'judging' ('id_judging','results','id_ring','id_expert') VALUES ('311','7','211','111');
+INSERT INTO 'judging' ('id_judging','results','id_ring','id_expert') VALUES ('312','10','212','112');
+INSERT INTO 'judging' ('id_judging','results','id_ring','id_expert') VALUES ('313','8','213','113');
+INSERT INTO 'judging' ('id_judging','results','id_ring','id_expert') VALUES ('314','5','211','114');
+INSERT INTO 'judging' ('id_judging','results','id_ring','id_expert') VALUES ('315','3','212','115');
 </code></pre></div>
             </div>
         </div>

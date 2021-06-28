@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Exhibit - Exhibition</title>
+        <title>Inquiries - Exhibition</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,16 +36,16 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../MongoDB/create%26insert/" class="dropdown-item">Create&insert</a>
+    <a href="../create%26insert/" class="dropdown-item">Create&insert</a>
 </li>
                                     
 <li>
-    <a href="../../MongoDB/inquiries/" class="dropdown-item">Inquiries</a>
+    <a href="./" class="dropdown-item active">Inquiries</a>
 </li>
                                 </ul>
                             </li>
@@ -88,40 +88,40 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../dog/" class="dropdown-item">Dog</a>
+    <a href="../../tables/dog/" class="dropdown-item">Dog</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Exhibit</a>
+    <a href="../../tables/exhibit/" class="dropdown-item">Exhibit</a>
 </li>
                                     
 <li>
-    <a href="../expert/" class="dropdown-item">Expert</a>
+    <a href="../../tables/expert/" class="dropdown-item">Expert</a>
 </li>
                                     
 <li>
-    <a href="../judging/" class="dropdown-item">Judging</a>
+    <a href="../../tables/judging/" class="dropdown-item">Judging</a>
 </li>
                                     
 <li>
-    <a href="../owner/" class="dropdown-item">Owner</a>
+    <a href="../../tables/owner/" class="dropdown-item">Owner</a>
 </li>
                                     
 <li>
-    <a href="../perfom/" class="dropdown-item">Perfom</a>
+    <a href="../../tables/perfom/" class="dropdown-item">Perfom</a>
 </li>
                                     
 <li>
-    <a href="../registration/" class="dropdown-item">Registration</a>
+    <a href="../../tables/registration/" class="dropdown-item">Registration</a>
 </li>
                                     
 <li>
-    <a href="../ring/" class="dropdown-item">Ring</a>
+    <a href="../../tables/ring/" class="dropdown-item">Ring</a>
 </li>
                                 </ul>
                             </li>
@@ -134,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../dog/" class="nav-link">
+                                <a rel="prev" href="../create%26insert/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../expert/" class="nav-link">
+                                <a rel="next" href="../../MySQL/inquiries/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -161,45 +161,41 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#inquiries" class="nav-link">Inquiries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h4 id="exhibit">Exhibit</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Primary key</th>
-<th>Foreign key</th>
-<th>Unique</th>
-<th>Integrity constraints</th>
-<th>Null/not null</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id_exhibit</td>
-<td>int</td>
-<td>+</td>
-<td></td>
-<td>+</td>
-<td></td>
-<td>not null</td>
-</tr>
-<tr>
-<td>type_exhibit</td>
-<td>varchar</td>
-<td></td>
-<td></td>
-<td></td>
-<td>30</td>
-<td>not null</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="inquiries">Inquiries</h2>
+<h5 id="1-1-2021">Запрос 1:  Вывести  информацию о собаках, которые вакцинировались после 1 мая 2021 года.</h5>
+<pre><code class="language-sql">db.Dog.find ({date_vaccination: {$gt : ISODate(&quot;2021-05-01T00:00:00.132Z&quot;)}})
+</code></pre>
+<h5 id="1">Результат запроса 1:</h5>
+<p><img alt="" src="../1.PNG" /></p>
+<h5 id="2">Запрос 2: Вывести  информацию о выступлениях с промежуточными результатами.</h5>
+<pre><code class="language-sql">db.Perform.find({interm_results: {$exists: true}})
+</code></pre>
+<h5 id="2_1">Результат запроса 2:</h5>
+<p><img alt="" src="../2.PNG" /></p>
+<h5 id="3-_">Запрос 3: Вывести всех владельцев, заменив все пробелы в ФИО на "_".</h5>
+<pre><code class="language-sql">db.Owner.aggregate([{$project:{Full_name:{$replaceAll:{input:&quot;$Full_name&quot;, find:&quot; &quot;,replacement:&quot;_&quot;}}}}]).pretty()
+</code></pre>
+<h5 id="3">Результат запроса 3:</h5>
+<p><img alt="" src="../3.PNG" /></p>
+<h5 id="4">Запрос 4: Вывести информацию о регистрации с максимальным чеком.</h5>
+<pre><code class="language-sql">db.Registration.find({&quot;_id&quot;:{$gt: ObjectId(&quot;60c8aab9bb5cf54303651ee3&quot;) }}).sort({chequel:1}).limit(1)
+</code></pre>
+<h5 id="4_1">Результат запроса 4:</h5>
+<p><img alt="" src="../4.PNG" /></p>
+<h5 id="5">Запрос 5: Вывести  имена владельцев с нижним регистром.</h5>
+<pre><code class="language-sql">db.Owner.aggregate([{$project: {Full_name: {$toLower: &quot;$Full_name&quot;}}}])
+</code></pre>
+<h5 id="5_1">Результат запроса 5:</h5>
+<p><img alt="" src="../5.PNG" /></p></div>
             </div>
         </div>
 

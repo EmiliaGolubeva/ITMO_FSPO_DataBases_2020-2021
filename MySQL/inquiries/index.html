@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Insert - Exhibition</title>
+        <title>Inquiries - Exhibition</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -36,12 +36,29 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Code <b class="caret"></b></a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Insert</a>
+    <a href="../../MongoDB/create%26insert/" class="dropdown-item">Create&insert</a>
+</li>
+                                    
+<li>
+    <a href="../../MongoDB/inquiries/" class="dropdown-item">Inquiries</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MySQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Inquiries</a>
+</li>
+                                    
+<li>
+    <a href="../insert/" class="dropdown-item">Insert</a>
 </li>
                                     
 <li>
@@ -50,11 +67,24 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mongo <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../mongo/create%26insert/" class="dropdown-item">Create&insert</a>
+    <a href="../../PHP/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PostgreSQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../PostgreSQL/insert/" class="dropdown-item">Insert</a>
+</li>
+                                    
+<li>
+    <a href="../../PostgreSQL/%D1%81reate/" class="dropdown-item">Сreate</a>
 </li>
                                 </ul>
                             </li>
@@ -104,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../.." class="nav-link">
+                                <a rel="prev" href="../../MongoDB/inquiries/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../%D1%81reate/" class="nav-link">
+                                <a rel="next" href="../insert/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -131,7 +161,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#inserts" class="nav-link">Inserts</a>
+            <li class="nav-item" data-level="2"><a href="#inquiries" class="nav-link">Inquiries</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -140,50 +170,83 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="inserts">Inserts</h2>
-<h4 id="dog">Заполнение таблицы "Dog"</h4>
-<pre><code>INSERT INTO dog VALUES (1,'Sharik',8898,TRUE,10),
-                            (2,'Archi',7654,TRUE,10),
-                                (3,'Bertold',98898,FALSE,12);
+<h2 id="inquiries">Inquiries</h2>
+<h5 id="11">Запрос 1.1:  Вывести  информацию о собаке на каком ринге она выступала, отсортированную по результатам выступления.</h5>
+<pre><code class="language-sql">SELECT dog.name as dog_name, `perfomance in the ring`.grade, `perfomance in the ring`.final_rating, ring.ring_number
+FROM dog, ring, `perfomance in the ring` 
+WHERE (dog.id_dog = `perfomance in the ring`.id_dog) and (ring.id_Ring = `perfomance in the ring`.id_ring)
+ORDER by `perfomance in the ring`.grade DESC;
 </code></pre>
-<h4 id="owner">Заполнение таблицы "Owner"</h4>
-<pre><code>INSERT INTO owner VALUES (11,'Dobrolubov'), 
-                                (15,'Pushkin Alexsandr Sergeevich'),
-                                        (13,'Sorokina Irina Vladimirovna'),
-                                                (12,'Borodina Antonina');
+<h5 id="11_1">Результат запроса 1.1:</h5>
+<p><img alt="" src="../1_1.PNG" /></p>
+<h5 id="12">Запрос 1.2: Вывести  информацию о статусе участия собаки и о типе выставки, отсортированную по именам собак.</h5>
+<pre><code class="language-sql">SELECT dog.name as dog_name, registration.status as participation_status, exhibition.type as type_exhibition
+FROM dog, exhibition, registration 
+WHERE (dog.id_dog = registration.id_dog) and (exhibition.id_exhibition = registration.id_exhibition)
+ORDER by dog.name;
 </code></pre>
-<h4 id="registration">Заполнение таблицы "Registration"</h4>
-<pre><code>INSERT INTO registration VALUES (98,23000,TRUE,11), 
-                                    (51,4080,TRUE,12), 
-                                        (63,27990,FALSE,13), 
-                                            (70,9299,TRUE,11);
+<h5 id="12_1">Результат запроса 1.2:</h5>
+<p><img alt="" src="../1_2.PNG" /></p>
+<h5 id="2-5-000-1">Запрос 2: Вывести имя собак, у которых чек оплачен на сумму больше 5 000 и статус участия 1.</h5>
+<pre><code class="language-sql">SELECT registration.id_dog, dog.name, registration.chequel
+FROM registration JOIN dog ON registration.id_dog = dog.id_dog
+WHERE (chequel &gt; 5000) AND (status = 1);
 </code></pre>
-<h4 id="expert">Заполнение таблицы "Expert"</h4>
-<pre><code>INSERT INTO expert VALUES (111, TRUE, 'Min Yoongi', 'producer'),                                                
-                                (113, TRUE, 'Park Jimin', 'dancer'), 
-                                        (112, FALSE, 'Kim Namjoon', 'writer');
+<h5 id="2">Результат запроса 2:</h5>
+<p><img alt="" src="../2.PNG" /></p>
+<h5 id="3-2019">Запрос 3: Вывести месяц и год даты последней вакцинации, которая была проведена после 2019 года.</h5>
+<pre><code class="language-sql">SELECT id_dog, name, EXTRACT(MONTH from date_vaccination) AS month_vaccination, EXTRACT(YEAR from date_vaccination) AS year_vaccination
+FROM dog WHERE EXTRACT(YEAR from date_vaccination) &gt; 2019
+ORDER BY month_vaccination DESC;
 </code></pre>
-<h4 id="ring">Заполнение таблицы "Ring"</h4>
-<pre><code>INSERT INTO ring VALUES (211, 1),
-                            (212, 2),
-                                (213, 3);
+<h5 id="3">Результат запроса 3:</h5>
+<p><img alt="" src="../3.PNG" /></p>
+<h5 id="41">Запрос 4.1: Вывести всех собак и их клубы с использованием функции смены регистра.</h5>
+<pre><code class="language-sql">SELECT id_dog, UPPER(name), UPPER(members_club) FROM dog;
 </code></pre>
-<h4 id="perform">Заполнение таблицы "Perform"</h4>
-<pre><code>INSERT INTO perfom VALUES 
-            (102, 3, 'bad exhibition', 'certificate of participation', 202, 3, 51),
-                    (101, 8, 'good exhibition', 'prize-winner', 201, 1, 98),     
-                            (103, 10, 'excellent exhibition', 'winner', 203, 2, 63);
+<h5 id="41_1">Результат запроса 4.1:</h5>
+<p><img alt="" src="../4_1.PNG" /></p>
+<h5 id="42">Запрос 4.2:  Вывести первые пять символов от наименования финального результата, отсортированных по оценке выступления в порядке возрастания.</h5>
+<pre><code class="language-sql">SELECT id_perfomance, LEFT(final_rating, 5) AS final_rating, grade 
+FROM `perfomance in the ring` ORDER BY grade;  
 </code></pre>
-<h4 id="exhibit">Заполнение таблицы "Exhibit"</h4>
-<pre><code>INSERT INTO exhibit VALUES (201, 'monobreed'),
-                                (202, 'monobreed' ),
-                                        (203, 'polybreed');
+<h5 id="42_1">Результат запроса 4.2:</h5>
+<p><img alt="" src="../4_2.PNG" /></p>
+<h5 id="6-1-2019-31-2021">Запрос 6: Вывести количество собак, у которых вакцинация была пройдена в период от 1 января 2019 года до 31 декабря 2021 года.</h5>
+<pre><code class="language-sql">SELECT COUNT(id_dog) AS kolvo_dog 
+FROM dog WHERE date_vaccination 
+BETWEEN '2019-01-01' and '2021-12-31';
 </code></pre>
-<h4 id="judging">Заполнение таблицы "Judging"</h4>
-<pre><code>INSERT INTO judging VALUES (311, 5, 111, 101, 211),
-                                (312, 6, 113, 102, 213),
-                                        (313, 9, 112, 103, 212);
-</code></pre></div>
+<h5 id="6">Результат запроса 6:</h5>
+<p><img alt="" src="../6.PNG" /></p>
+<h5 id="7-1">Запрос 7: Вывести название тех клубов экспертов, в которых количество участников больше 1.</h5>
+<pre><code class="language-sql">SELECT expert_club FROM expert 
+GROUP BY expert_club HAVING COUNT(expert_club) &gt; 1;
+</code></pre>
+<h5 id="7">Результат запроса 7:</h5>
+<p><img alt="" src="../7.PNG" /></p>
+<h5 id="8-1">Запрос 8: Вывести уникальные номера и имена собак, статус участия которых равен 1.</h5>
+<pre><code class="language-sql">SELECT id_dog, name FROM dog 
+WHERE id_dog = ANY (SELECT id_dog FROM registration WHERE status = 1);
+</code></pre>
+<h5 id="8">Результат запроса 8:</h5>
+<p><img alt="" src="../8.PNG" /></p>
+<h5 id="101">Запрос 10.1: Вывести информацию о хозяине собаки, которая не прошла регистрацию.</h5>
+<pre><code class="language-sql">SELECT registration.id_registration, owner.id_owner, owner.FN as name_owner
+FROM registration 
+INNER JOIN owner ON registration.id_owner = owner.id_owner 
+WHERE (status = 0);
+</code></pre>
+<h5 id="101_1">Результат запроса 10.1:</h5>
+<p><img alt="" src="../10_1.PNG" /></p>
+<h5 id="102-5">Запрос 10.2: Вывести информацию о собаке, чьи баллы за выступление больше "5" и выставка типа "полипородная".</h5>
+<pre><code class="language-sql">SELECT `perfomance in the ring`.id_perfomance, dog.name, `perfomance in the ring`.grade, exhibition.id_exhibition
+FROM `perfomance in the ring`
+JOIN dog ON `perfomance in the ring`.id_dog = dog.id_dog
+INNER JOIN exhibition ON `perfomance in the ring`.id_exhibition = exhibition.id_exhibition
+WHERE (grade &gt; 5 and type = 'polybreed');
+</code></pre>
+<p><img alt="" src="../10_2.PNG" /></p></div>
             </div>
         </div>
 

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Exhibit - Exhibition</title>
+        <title>Code - Exhibition</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -66,12 +66,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../PHP/code/" class="dropdown-item">Code</a>
+    <a href="./" class="dropdown-item active">Code</a>
 </li>
                                 </ul>
                             </li>
@@ -88,40 +88,40 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../dog/" class="dropdown-item">Dog</a>
+    <a href="../../tables/dog/" class="dropdown-item">Dog</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Exhibit</a>
+    <a href="../../tables/exhibit/" class="dropdown-item">Exhibit</a>
 </li>
                                     
 <li>
-    <a href="../expert/" class="dropdown-item">Expert</a>
+    <a href="../../tables/expert/" class="dropdown-item">Expert</a>
 </li>
                                     
 <li>
-    <a href="../judging/" class="dropdown-item">Judging</a>
+    <a href="../../tables/judging/" class="dropdown-item">Judging</a>
 </li>
                                     
 <li>
-    <a href="../owner/" class="dropdown-item">Owner</a>
+    <a href="../../tables/owner/" class="dropdown-item">Owner</a>
 </li>
                                     
 <li>
-    <a href="../perfom/" class="dropdown-item">Perfom</a>
+    <a href="../../tables/perfom/" class="dropdown-item">Perfom</a>
 </li>
                                     
 <li>
-    <a href="../registration/" class="dropdown-item">Registration</a>
+    <a href="../../tables/registration/" class="dropdown-item">Registration</a>
 </li>
                                     
 <li>
-    <a href="../ring/" class="dropdown-item">Ring</a>
+    <a href="../../tables/ring/" class="dropdown-item">Ring</a>
 </li>
                                 </ul>
                             </li>
@@ -134,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../dog/" class="nav-link">
+                                <a rel="prev" href="../../MySQL/%D1%81reate/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../expert/" class="nav-link">
+                                <a rel="next" href="../../PostgreSQL/insert/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -161,45 +161,33 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">Сайт для работы с базой данных</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h4 id="exhibit">Exhibit</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Primary key</th>
-<th>Foreign key</th>
-<th>Unique</th>
-<th>Integrity constraints</th>
-<th>Null/not null</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id_exhibit</td>
-<td>int</td>
-<td>+</td>
-<td></td>
-<td>+</td>
-<td></td>
-<td>not null</td>
-</tr>
-<tr>
-<td>type_exhibit</td>
-<td>varchar</td>
-<td></td>
-<td></td>
-<td></td>
-<td>30</td>
-<td>not null</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="_1">Сайт для работы с базой данных</h2>
+<h5 id="bootstrap-5">На главной странице сайта, оформленной с помощью фреймворка "Bootstrap 5", реализовано как навигационное меню, помогающее пользователю ориентироваться на странице, так и текстовое описание и схема базы данных.</h5>
+<p><img alt="" src="../menu.PNG" /></p>
+<h5 id="dog">На навигационной панели предоставлен выбор таблицы с возможностью перехода на страницу, где можно осуществить нужные действия с таблицей. Для примера возьмем таблицу "Dog".</h5>
+<p><img alt="" src="../dog.PNG" /></p>
+<h5 id="-dog">При нажатии на "Вывести информацию о собаках-участниках" мы получаем  информацию из таблицы "Dog", которая хранится в бд.</h5>
+<p><img alt="" src="../1.PNG" /></p>
+<h5 id="-">При нажатии на "Добавить собаку-участника" мы получаем возможность ввести нужные данные о новом участнике, которые автоматически добавляются в саму базу данных.</h5>
+<p><img alt="" src="../2.PNG" /></p>
+<p><img alt="" src="../2_1.PNG" /></p>
+<h5 id="_2">Результат добавление:</h5>
+<p><img alt="" src="../2_2.PNG" /></p>
+<h5 id="id-id">При нажатии на "Внести изменения о собаке" мы сначала вводим id участника, для проверки на существование данного id в базе данных. Далее мы либо получаем сообщение об ошибке, либо информацию о уже имеющихся данных с возможностью изменения.</h5>
+<p><img alt="" src="../3.PNG" /></p>
+<p><img alt="" src="../3_1.PNG" /></p>
+<h5 id="-id">При нажатии на "Удалить собаку-участника" мы по id удаляем участника и информацию о нем из базы данных.</h5>
+<p><img alt="" src="../4.PNG" /></p>
+<h5 id="_3">С каждой страницы мы можем вернуться как к "Выбору действия", так и в "Меню".</h5></div>
             </div>
         </div>
 

@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Exhibit - Exhibition</title>
+        <title>Сreate - Exhibition</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -75,53 +75,53 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PostgreSQL <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../PostgreSQL/insert/" class="dropdown-item">Insert</a>
+    <a href="../insert/" class="dropdown-item">Insert</a>
 </li>
                                     
 <li>
-    <a href="../../PostgreSQL/%D1%81reate/" class="dropdown-item">Сreate</a>
+    <a href="./" class="dropdown-item active">Сreate</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Tables <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../dog/" class="dropdown-item">Dog</a>
+    <a href="../../tables/dog/" class="dropdown-item">Dog</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Exhibit</a>
+    <a href="../../tables/exhibit/" class="dropdown-item">Exhibit</a>
 </li>
                                     
 <li>
-    <a href="../expert/" class="dropdown-item">Expert</a>
+    <a href="../../tables/expert/" class="dropdown-item">Expert</a>
 </li>
                                     
 <li>
-    <a href="../judging/" class="dropdown-item">Judging</a>
+    <a href="../../tables/judging/" class="dropdown-item">Judging</a>
 </li>
                                     
 <li>
-    <a href="../owner/" class="dropdown-item">Owner</a>
+    <a href="../../tables/owner/" class="dropdown-item">Owner</a>
 </li>
                                     
 <li>
-    <a href="../perfom/" class="dropdown-item">Perfom</a>
+    <a href="../../tables/perfom/" class="dropdown-item">Perfom</a>
 </li>
                                     
 <li>
-    <a href="../registration/" class="dropdown-item">Registration</a>
+    <a href="../../tables/registration/" class="dropdown-item">Registration</a>
 </li>
                                     
 <li>
-    <a href="../ring/" class="dropdown-item">Ring</a>
+    <a href="../../tables/ring/" class="dropdown-item">Ring</a>
 </li>
                                 </ul>
                             </li>
@@ -134,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../dog/" class="nav-link">
+                                <a rel="prev" href="../insert/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../expert/" class="nav-link">
+                                <a rel="next" href="../../tables/dog/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -161,45 +161,86 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#create" class="nav-link">Create</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h4 id="exhibit">Exhibit</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Primary key</th>
-<th>Foreign key</th>
-<th>Unique</th>
-<th>Integrity constraints</th>
-<th>Null/not null</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id_exhibit</td>
-<td>int</td>
-<td>+</td>
-<td></td>
-<td>+</td>
-<td></td>
-<td>not null</td>
-</tr>
-<tr>
-<td>type_exhibit</td>
-<td>varchar</td>
-<td></td>
-<td></td>
-<td></td>
-<td>30</td>
-<td>not null</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="create">Create</h2>
+<h4 id="dog">Создание таблицы "Dog"</h4>
+<pre><code>CREATE TABLE dog (
+    id_dog integer PRIMARY KEY NOT NULL,
+    dog_name text NOT NULL,
+    passport integer NOT NULL,
+    contract boolean NOT NULL,
+    id_dog_club integer NOT NULL
+);
+</code></pre>
+<h4 id="owner">Создание таблицы "Owner"</h4>
+<pre><code>CREATE TABLE owner (
+    id_owner integer PRIMARY KEY NOT NULL,
+    owner_name text NOT NULL
+);  
+</code></pre>
+<h4 id="registration">Создание таблицы "Registration"</h4>
+<pre><code>CREATE TABLE registration (
+    id_registration integer PRIMARY KEY NOT NULL,
+    receipt integer NOT NULL,
+    status boolean NOT NULL,
+    id_owner integer NOT NULL,
+    FOREIGN KEY (id_owner) REFERENCES owner (id_owner)
+);
+</code></pre>
+<h4 id="expert">Создание таблицы "Expert"</h4>
+<pre><code>CREATE TABLE expert (
+    id_expert integer PRIMARY KEY NOT NULL,
+    contract boolean NOT NULL,
+    full_name text NOT NULL,
+    expert_club text NOT NULL
+);
+</code></pre>
+<h4 id="ring">Создание таблицы "Ring"</h4>
+<pre><code>CREATE TABLE ring (
+    id_ring integer PRIMARY KEY NOT NULL,
+    ring_number integer NOT NULL
+);
+</code></pre>
+<h4 id="perform">Создание таблицы "Perform"</h4>
+<pre><code>CREATE TABLE perfom (
+    id_perfom integer PRIMARY KEY NOT NULL,
+    mark integer NOT NULL,
+    inermed_results text NOT NULL,
+    final_results text NOT NULL,
+    id_exhibit integer NOT NULL,
+    id_dog integer NOT NULL,
+    id_registration integer NOT NULL,
+    FOREIGN KEY (id_exhibit) REFERENCES exhibit (id_exhibit),
+    FOREIGN KEY (id_dog) REFERENCES dog (id_dog),
+    FOREIGN KEY (id_registration) REFERENCES registration (id_registration)
+);
+</code></pre>
+<h4 id="exhibit">Создание таблицы "Exhibit"</h4>
+<pre><code> CREATE TABLE exhibit (
+    id_exhibit integer PRIMARY KEY NOT NULL,
+    type_exhibit text NOT NULL
+);
+</code></pre>
+<h4 id="judging">Создание таблицы "Judging"</h4>
+<pre><code>CREATE TABLE judging (
+    id_judging  integer PRIMARY KEY NOT NULL,
+    results integer NOT NULL,
+    id_expert integer NOT NULL,
+    id_perfom integer NOT NULL,
+    id_ring integer NOT NULL,
+    FOREIGN KEY (id_expert) REFERENCES expert (id_expert),
+    FOREIGN KEY (id_perfom) REFERENCES perfom (id_perfom),
+    FOREIGN KEY (id_ring) REFERENCES ring (id_ring)
+);
+</code></pre></div>
             </div>
         </div>
 

@@ -36,25 +36,55 @@
                             <li class="navitem">
                                 <a href="../.." class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Code <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../code/insert/" class="dropdown-item">Insert</a>
-</li>
-                                    
-<li>
-    <a href="../../code/%D1%81reate/" class="dropdown-item">Сreate</a>
-</li>
-                                </ul>
-                            </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Mongo <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MongoDB <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
     <a href="./" class="dropdown-item active">Create&insert</a>
+</li>
+                                    
+<li>
+    <a href="../inquiries/" class="dropdown-item">Inquiries</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MySQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../MySQL/inquiries/" class="dropdown-item">Inquiries</a>
+</li>
+                                    
+<li>
+    <a href="../../MySQL/insert/" class="dropdown-item">Insert</a>
+</li>
+                                    
+<li>
+    <a href="../../MySQL/%D1%81reate/" class="dropdown-item">Сreate</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PHP <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../PHP/code/" class="dropdown-item">Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PostgreSQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../PostgreSQL/insert/" class="dropdown-item">Insert</a>
+</li>
+                                    
+<li>
+    <a href="../../PostgreSQL/%D1%81reate/" class="dropdown-item">Сreate</a>
 </li>
                                 </ul>
                             </li>
@@ -104,12 +134,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../code/%D1%81reate/" class="nav-link">
+                                <a rel="prev" href="../.." class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../tables/dog/" class="nav-link">
+                                <a rel="next" href="../inquiries/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -144,7 +174,8 @@
 <h4 id="owner">Создание и заполнение таблицы "Owner"</h4>
 <pre><code>db.Owner.insertMany([
                         {Full_name:&quot;Sakura Haruno&quot;},
-                        {Full_name:&quot;Shikamaru Nara&quot;},                                           {Full_name:&quot;Uzumaki Naruto&quot;},
+                        {Full_name:&quot;Shikamaru Nara&quot;},                                       
+                        {Full_name:&quot;Uzumaki Naruto&quot;},
                         {Full_name:&quot;Uchiha Sasuke&quot;},
                         {Full_name:&quot;Kakashi Hatake&quot;}
                     ])
